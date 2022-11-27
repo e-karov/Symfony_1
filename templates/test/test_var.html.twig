@@ -1,0 +1,10 @@
+{{varName.name}}<br>
+{{varName.age}}<br>
+{% set sizes = [34, 35, 37, 38, 46, 56] %}
+{{sizes|filter(v=>v>37)|join(". ")}}<br>
+{{"This text becomes uppercase"|upper}}<br>
+{% for i in range(low=0,high=30, step=3) %}
+    {{ i }}
+{% endfor %}<br>
+{{"now"|date(null, "Europe/Vienna")}}
+{{"now"|date("d.m.Y H:i:s", timezone="Europe/Vienna")}}

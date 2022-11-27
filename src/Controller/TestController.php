@@ -23,4 +23,24 @@ class TestController extends AbstractController
         return $this->render("test/random.html.twig", ["randomNumber"=>$result]);
     }
 
+    #[Route("test-var", name:"var")]
+    public function testVar()
+    {
+        $arr = array("name"=>"serri", "age"=>30);
+        return $this->render("test/test_var.html.twig", array("varName"=>$arr));
+    }
+
+    #[Route("/hello-world", name:"hello_world_page")]
+    public function testAction()
+    {
+        $text = "Hello world!";
+        return $this->render("test/hello_world.html.twig", ["text"=>$text]);
+    }
+
+    #[Route("/child", name:"child_page")]
+    public function childAction()
+    {
+        return $this->render("test/child.html.twig");
+    }
+
 }
